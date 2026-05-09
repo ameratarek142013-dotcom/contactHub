@@ -1,0 +1,289 @@
+body{
+    font-family: "Inter", sans-serif;
+}
+button , a {
+    cursor: pointer;
+}
+:root{
+    --main-color : #7446FF;
+    --secondary-color : 
+}
+.fs-8{
+    font-size: .5rem !important;
+}
+
+.fs-10{
+    font-size: .625rem !important;
+}
+
+.fs-12{
+    font-size: .75rem !important;
+}
+.fs-14{
+    font-size: .875rem !important;
+}
+.bg-purble{
+    background-color: var(--main-color) !important;
+}
+.text-purble{
+    color: var(--main-color) !important;
+}
+.text-lgray{
+    color: #D1D5DC !important;
+}
+.bg-lpurble{
+    background-color: #F3E8FF !important;
+}
+.bg-success-subtle{
+    background-color: #D0FAE5 !important;
+}
+.bg-success{
+    background-color: #ECFDF5 !important;
+}
+.bg-gray{
+    background-color: rgb(247, 247, 247) !important;
+}
+
+.bg-lgray{
+    background-color: #F3F4F6 !important;
+}
+
+.bg-red-linear{
+    background-image: linear-gradient(120deg , #FB195E,#EA0072);
+}
+
+.bg-pink-linear{
+    background-image: linear-gradient(120deg , #E22BEA,#E50089);
+}
+
+.bg-blue-linear{
+    background-image: linear-gradient(120deg , #00AEE0,#0567F9);
+}
+
+.bg-green-linear{
+    background-image: linear-gradient(120deg , #00B77E,#009A87);
+}
+
+
+
+/** Navbar **/
+
+nav .fa-address-book{
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    box-shadow: 1px 4px 10px #d3c4e7;
+}
+.border-color{
+    border-color: #E5E7EB !important;
+}
+.width-pic{
+    width: 42px !important;
+    height: 40px !important;
+}
+
+nav .nav-item img{
+    border-radius: 12px !important;
+}
+nav .nav-item svg:hover{
+    background-color: rgb(235, 235, 235);
+    transition: all .3s;
+}
+nav .nav-button{
+    background-image: linear-gradient(to right , #7E24FE,#5139F7) !important;
+    border-radius: 12px !important;
+}
+nav .nav-button:hover{
+    transform: translateY(-2px);
+    box-shadow: 1px 10px 12px #d3c4e7 ;
+    transition: all .3s ease;
+}
+nav{
+    background: rgba(255, 255, 255, 0.7); 
+    backdrop-filter: blur(20px);
+   
+}
+
+
+
+/** main section **/
+
+
+.main {
+    background-color: #F8FAFC;
+    padding-top: 110px !important;
+}
+.main .total .fa-star , .main .content .card-header  .fa-star{
+    background-image: linear-gradient(120deg , #FFAE00,#FF7B00);
+    box-shadow: .1px 4px 8px  #f2dab1;
+}
+.main .total .fa-heart-pulse , .main .content .card-header  .fa-heart-pulse{
+     background-image: linear-gradient(120deg , #FC1A4E,#EB001E);
+      box-shadow: .1px 5px 8px  #eda8b8;
+}
+.main .total .inner:hover{
+    box-shadow: .01px 3px 5px rgb(213, 213, 213) !important;
+    transition: all .4s !important;
+}
+.main .form-control:focus{
+    border-color: var(--main-color) !important;
+    box-shadow: 0 0 0 2px rgb(235, 206, 239);
+}
+input::placeholder{
+    color: rgb(182, 182, 182) !important;
+}
+.main .fa-magnifying-glass{
+    position: absolute;
+    margin-top: 10px;
+    margin-inline: 15px;
+    color: rgb(182, 182, 182) !important; ;
+}
+
+.main .contact .pic{
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+
+}
+.main .contact .heart{
+    bottom: -5px !important;
+    right: -5px !important;
+    background-color: #FC1A4E !important;
+    padding: 6px !important;
+}
+
+.main .contact .star{
+    top: -5px !important;
+    right: -5px !important;
+    padding: 6px !important;
+}
+.main .contact .card:hover{
+    box-shadow: 3px 8px 10px -5px rgb(219, 219, 219);
+    transition: all .3s ease;
+
+}
+
+.card-footer{
+    border-top: 1px solid rgb(230, 230, 230);
+   
+}
+
+.card-footer .fa-phone:hover{
+    background-color: #D0FAE5 !important;
+    transition: all .3s;
+}
+.card-footer .fa-envelope:hover{
+    background-color: #e7e1ff !important;
+    transition: all .3s;
+}
+.card-footer .fa-pen:hover{
+    background-color: #EEF2FF !important;
+    color: #5139F7 !important;
+    transition: all .3s;
+}
+.card-footer .fa-trash:hover{
+    background-color: #ffe6e7 !important;
+    color: red !important;
+    transition: all .3s;
+}
+.card-footer .icon-star2:hover{
+     color: #FFB900 !important;
+    background-color: #F3F4F6 !important;
+    transition: all .3s;
+}
+.card-footer .fa-heart-pulse:hover{
+    background-color: #fbc9cc !important;
+    transition: all .3s;
+}
+.card-footer .icon-star:hover{
+   
+    background-color: #f9e7b6 !important;
+    transition: all .3s;
+}
+.card-footer .icon-heart:hover{
+    background-color: #F3F4F6  !important;
+    color: red !important;
+    transition: all .3s;
+}
+.fav .card-header{
+    background-color: #FFF8ED !important;
+}
+.emerg .card-header{
+    background-color: #FFF2F2 !important;
+}
+.main .fav .card-body .inner:hover{
+    background-color: #FFFBEB !important;
+    transition: all .3s ease;
+}
+.main .emerg .card-body .inner:hover{
+    background-color: #FFF1F2 !important;
+    transition: all .3s ease;
+}
+.main .card-body .inner:hover .phone-green{
+    background-color: #00BC7D !important;
+    color: white !important;
+    transition: all .3s ease;
+}
+.main .card-body .inner:hover .phone-red{
+    background-color: #FF2056 !important;
+    color: white !important;
+    transition: all .3s ease;
+}
+
+
+/** form section **/
+
+.input-form{
+    background-image: linear-gradient(to right , rgba(24, 24, 44, 0.5));
+    backdrop-filter: blur(5px);
+    
+}
+.box{
+    height: 90%;
+    width: 500px !important;
+}
+.input-form .box::-webkit-scrollbar{
+    display: none ;
+}
+
+.input-form .photo div {
+  padding: 35px 30px;
+  width: fit-content;
+  border-radius: 50%;
+  background: linear-gradient(rgba(62, 143, 255), rgba(32, 109, 254));
+}
+.input-form .input-img,
+.input-form #cancelButton  {
+  background-color: #f3f4f6 !important;
+  transition: 0.3s;
+  padding-block: 10px !important;
+}
+.input-form .input-img:hover,
+.input-form #cancelButton:hover ,
+.input-form .box header svg:hover {
+  background-color: #e5e7eb !important;
+  transition: 0.3s;
+}
+.input-form #saveButton ,
+.input-form #editeButton {
+  background: var(--main-color);
+  transition: 0.3s;
+  padding-block: 10px !important;
+  
+}
+.input-form #saveButton:hover,
+.input-form #editeButton:hover {
+  box-shadow: 0 5px 8px rgba(122, 2, 243, 0.277);
+}
+.input-form .form-control:focus,
+.input-form .form-select:focus,
+.search-container .form-control:focus {
+  background-color: white !important;
+  border: 1px solid #8E51FF !important;
+   box-shadow: 0 0 0 2px rgb(235, 206, 239);
+}
+.input-form input,
+.input-form textarea,
+.input-form select {
+  background-color: #f9fafb;
+  padding: 10px;
+}

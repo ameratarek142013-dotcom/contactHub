@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> ContactHub - Smart Contact Manager</title>
+  <link rel="icon" href="images/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/all.min.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg  border-bottom border-1 border-color py-3  fixed-top ">
+    <div class="container-fluid px-4 ">
+      <div class="d-flex align-items-center gap-3">
+        <i class="fa-solid fa-address-book bg-purble text-white rounded-3 fs-5  "></i>
+        <div>
+          <h1 class="navbar-brand fw-bold fs-4 m-0 text-capitalize p-0" href="#">Contact<span
+              class="text-purble">Hub</span></h1>
+          <p class="fs-12 text-secondary m-0 fw-semibold d-none d-md-inline-block ">Smart Contact Manager</p>
+        </div>
+      </div>
+
+      <ul class="navbar-nav ms-auto d-flex align-items-center justify-content-between ">
+
+        <div class="d-flex align-items-center gap-4">
+          <button class="nav-button btn text-white px-3 py-2 fs-14 fw-semibold "> <i
+              class="fa-solid fa-plus me-1 fs-12"></i> Add <span
+              class="d-none d-md-inline-block">Contact</span></button>
+          <li class="nav-item  d-none d-md-inline-block  ">
+            
+            <button class="border-0 bg-white bg-opacity-10 p-0"><i class="fa-solid fa-bell p-2 rounded-3 text-secondary"></i></button>
+          </li>
+          <li class="nav-item d-none d-md-inline-block  me-3">
+            <button class="border-0 bg-white bg-opacity-10 p-0"><i class="fa-solid fa-gear p-2 rounded-3 text-secondary"></i></button>
+          </li>
+        </div>
+
+        <li class="nav-item">
+          <figure class="width-pic object-fit-cover mb-0">
+            <img class="w-100 h-100 " src="images/imgi_6_avatar-2-CwUcGkzI.jpg" alt="person">
+          </figure>
+        </li>
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <main>
+    <section class="main py-5">
+      <div class="container-fluid px-4">
+        <div class="total">
+          <div class="row g-3">
+            <div class="col-6 col-lg-4">
+
+              <div class="inner bg-white rounded-4 p-4 shadow-sm border border-1 border-color d-flex gap-3">
+                <i class="fa-solid fa-users p-3 shadow rounded-4 bg-primary text-white"></i>
+                <div class="d-flex flex-column">
+                  <span class="fs-12 text-secondary fw-semibold">TOTAL</span>
+                  <span id="totalCount" class="fs-4 fw-bold">0</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-6 col-lg-4">
+
+              <div class="inner bg-white rounded-4 p-4 shadow-sm border border-1 border-color d-flex gap-3">
+                <i class="fa-solid fa-star p-3 rounded-4 text-white"></i>
+                <div class="d-flex flex-column">
+                  <span class="fs-12 text-secondary fw-semibold">FAVORITES</span>
+                  <span id="favCount" class="fs-4 fw-bold">0</span>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-6 col-lg-4">
+
+              
+
+              <div class="inner bg-white rounded-4 p-4 shadow-sm border border-1 border-color d-flex gap-3">
+                <i class="fa-solid fa-heart-pulse p-3 rounded-4  text-white"></i>
+                <div class="d-flex flex-column">
+                  <span class="fs-12 text-secondary fw-semibold text-uppercase">Emergency</span>
+                  <span id="emergCount" class="fs-4 fw-bold">0</span>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content py-4">
+          <div class="row">
+            <div class="col-12 col-xl-9">
+              <div class="all-contacts">
+                <div class="description">
+                  <h2 class="fs-2 my-1 fw-bold">All Contacts</h2>
+                  <p class="fs-14 text-secondary">Manage and organize your <span id="allCount">0</span> contacts</p>
+                </div>
+                <div class="search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <input type="search" class="form-control fs-14 py-2 rounded-3 ps-5" id="search"
+                    placeholder="Search by name, phone or email...">
+                </div>
+                <div class="contact py-4">
+                  <div id="hideContactBac" class="d-flex align-items-center justify-content-center flex-column my-5">
+                    <i class="fa-solid fa-address-book text-lgray fs-2 bg-lgray px-3 py-4 rounded-4 mt-4"></i>
+                    <p class="text-secondary mb-0 mt-3 fw-medium">No Contacts Found</p>
+                    <p class="text-lgray fs-14 fw-medium">Click "Add Contact" to get started</p>
+
+                  </div>
+                  <div id="innerData"  class="row g-3">
+
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-xl-3 ">
+              <div class="fav-emerg sticky-xl-top" style="top: 100px;">
+                <div class="card fav rounded-4 border border-2 border-color mb-3 ">
+                  <div class="card-header py-3 border-bottom-0 rounded-top-4 d-flex gap-2 align-items-center ">
+                    <i class="fa-solid fa-star p-2 rounded-3 text-white"></i>
+                    <div>
+                      <span class="fw-bold text-capitalize">Favorites</span>
+                      <p class="fs-12 text-secondary m-0">Quick access <span class="d-none d-xl-inline-block">to starred
+                          contacts</span></p>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p id="hidefav" class="text-lgray text-center fs-14 my-auto py-4">No favorite yet</p>
+                    <div id="favData" class="row" >
+                     
+                    </div>
+
+                  </div>
+                </div>
+                <div class="card emerg rounded-4 border border-2 border-color">
+                  <div class="card-header py-3 border-bottom-0 rounded-top-4 d-flex gap-2 align-items-center ">
+                    <i class="fa-solid fa-heart-pulse p-2 rounded-3 text-white"></i>
+                    <div>
+                      <span class="fw-bold text-capitalize">Emergency</span>
+                      <p class="fs-12 text-secondary m-0"><span class="d-none d-xl-inline-block">Important </span><span
+                          class="d-xl-none">Urgent </span> contacts <span class="d-none d-xl-inline-block">for urgent
+                          calls</span></p>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <p id="hideEmerg" class="text-lgray text-center fs-14 my-auto py-4 ">No emergency contacts</p>
+                    <div id="emergData" class="row">
+                     
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+    <form id="form" class="input-form d-none  fixed-top w-100 h-100 d-flex justify-content-center align-items-center">
+      <div class="box bg-white rounded-4 pt-0 overflow-auto mx-4 ">
+        <header class="position-sticky top-0 bg-white pt-4 pb-2 px-4 d-flex justify-content-between py-4 mt-0 border-bottom">
+          <div>
+            <h5 class="fw-bold ">Add New Contact</h5>
+          </div>
+          <button class="border-0 bg-white" type="button" ><i class="fa-solid fa-xmark text-secondary p-2 rounded-2"></i></button>
+        </header>
+        <div class="p-4">
+          <div class="photo  d-flex flex-column align-items-center py-4">
+          <div class=""><i class="fa-solid fa-user fa-2xl text-white"></i></div>
+          <label class="input-img small fw-medium my-3 rounded-3 p-2 bg-gray" for="input-img" style="cursor: pointer">
+            <i class="fa-solid fa-camera text-secondary me-1"></i>
+            <span>Change Photo</span>
+            <input type="file"  id="input-img"class="d-none" />
+          </label>
+        </div>
+        <div class="name fs-14 fw-semibold text-secondary">
+          <label>Full Name <span class="text-danger">*</span></label>
+          <input class="form-control my-2" type="text" id="nameInput" placeholder="Enter full name" />
+          <p class="fs-12 text-danger fw-lighter d-none">Name should contain only letters and spaces (2-50 characters)</p>
+        </div>
+        <div class="num fs-14 fw-semibold text-secondary">
+          <label>Phone Number <span class="text-danger">*</span></label>
+          <input class="form-control my-2" type="tel" id="numInput" placeholder="e.g., 01012345678" />
+          <p class="fs-12 text-danger fw-lighter d-none">Please enter a valid Egyptian phone number</p>
+        </div>
+        <div class="email fs-14 fw-semibold text-secondary">
+          <label>Email Adress</label>
+          <input class="form-control my-2" type="email" id="mailInput" placeholder="name@example.com" />
+          <p class="fs-12 text-danger fw-lighter d-none">Please enter a valid email address</p>
+        </div>
+        <div class="address fs-14 fw-semibold text-secondary">
+          <label>Adress</label>
+          <input class="form-control my-2" type="text" id="addressInput" placeholder="Enter address" />
+        </div>
+        <div class="selectGroup fs-14 fw-semibold text-secondary">
+          <label>Group</label>
+          <select class="form-select my-2 fs-14 fw-semibold text-secondary" name="" id="selectInput">
+            <option value="Select a group">Select a group</option>
+            <option value="Family">Family</option>
+            <option value="Friends">Friends</option>
+            <option value="Work">Work</option>
+            <option value="School">School</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="notes fs-14 fw-semibold text-secondary">
+          <label>Notes</label>
+          <textarea class="form-control my-2 fs-14" id="notesInput" placeholder="Add notes about this contact"
+            style="height: 70px; resize: none"></textarea>
+        </div>
+        <div class="checks d-flex py-4">
+          <div class="d-flex align-items-center me-3">
+            <input class="me-2" type="checkbox" name="checkBox" id="checkInput1" style="width: 18px; height: 18px" />
+            <label class="fs-14 fw-semibold text-secondary" for="checkInput1"><i class="fa-solid fa-star text-warning"></i> Favorite</label>
+          </div>
+          <div class="d-flex align-items-center">
+            <input class="me-2" type="checkbox" name="checkBox" id="checkInput2" style="width: 18px; height: 18px" />
+            <label class="fs-14 fw-semibold text-secondary" for="checkInput2"><i class="fa-solid fa-heart-pulse text-danger"></i>
+              Emergency</label>
+          </div>
+        </div>
+        <div class="buttons d-flex gap-3 mt-2">
+          <button type="button" class="btn w-50 fw-semibold fs-14 rounded-4" id="cancelButton">Cancel</button>
+          <button type="submit" class="btn w-50 text-white fw-semibold fs-14 rounded-4" id="saveButton" >
+            <i class="fa-solid fa-check me-2"></i>Save Contact
+          </button>
+           <button class=" d-none btn w-50 text-white fw-semibold fs-14 rounded-4" id="editeButton" >
+            <i class="fa-solid fa-check me-2"></i>Save Contact
+          </button>
+        </div>
+        </div>
+      </div>
+    </form>
+  </main>
+
+
+
+
+
+
+
+
+
+  <script src="js/index.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
