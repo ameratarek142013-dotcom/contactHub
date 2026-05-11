@@ -243,8 +243,8 @@ function getCartona(i) {
   }
 
   return `<div class="col-12 col-md-6">
-  <div class="card bg-white rounded-4 border border-2 border-color">
-                        <div class="inner p-3 pb-0">
+  <div class="card h-100 d-flex flex-column bg-white rounded-4 border border-2 border-color">
+                        <div class="inner flex-grow-1 p-3 pb-0">
                           <div class="d-flex align-items-center gap-3">
                             <div
                               class="pic position-relative text-white ${contactList[i].color} d-flex align-items-center justify-content-center fw-semibold fs-5 text-uppercase">
