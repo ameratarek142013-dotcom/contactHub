@@ -241,6 +241,7 @@ input::placeholder{
     height: 90%;
     width: 500px !important;
 }
+
 .input-form .box::-webkit-scrollbar{
     display: none ;
 }

@@ -34,6 +34,7 @@ let colors = [
 let oldIndex = -1;
 let color;
 let searchInput = document.getElementById("search");
+let isEditing = false
 
 let contactList = [];
 
@@ -45,52 +46,37 @@ if (localStorage.getItem("contactsData") !== null) {
 }
 
 saveButton.addEventListener("click", function () {
-  
-  addContact();
+  if (isEditing) {
+    updateContact()
+  }else{
+    addContact()
+  }
 });
 document.addEventListener("keydown", function (e) {
+  if (!form.classList.contains("d-none")) {
   if (e.key === "Enter") {
-
-    if (form.classList.contains("d-none")) {
-      return; 
-    }
-
     e.preventDefault();
-
-    if (!editeButton.classList.contains("d-none")) {
+    if (isEditing) {
       updateContact();
-      editeButton.classList.add("d-none");
-      saveButton.classList.remove("d-none");
     } else {
       addContact();
     }
-
-    
-  }
+     }
+   if (e.key === "Escape") {
+    cancelation();
+  }}
 });
 
 cancelButton.addEventListener("click", cancelation);
 
-document.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    cancelation();
-  }
-});
+
 
 function cancelation() {
+  isEditing = false
   clear();
   form.classList.add("d-none");
 }
 
-editeButton.addEventListener("click", function () {
-  updateContact();
-  clear();
-  saveButton.classList.remove("d-none");
-  editeButton.classList.add("d-none");
-  displayContact();
-  displayEmergency();
-  displayFav();
-});
 
 searchInput.addEventListener("input", function () {
   displayContact();
@@ -130,7 +116,6 @@ function addContact() {
       text: `A contact with this phone number already exists: ${existName}`,
       confirmButtonText: "OK",
     });
-    clear();
   } else {
     if (isNameValid && isPhoneValid && isEmailValid) {
       let contact = {
@@ -466,6 +451,7 @@ function toggleEmergency(index) {
 }
 
 function editeContact(index) {
+  isEditing = true
   currentIndex = index;
   nameInput.value = contactList[index].name;
   phoneInput.value = contactList[index].phone;
@@ -478,11 +464,11 @@ function editeContact(index) {
   color = contactList[index].color;
 
   form.classList.remove("d-none");
-  editeButton.classList.remove("d-none");
-  saveButton.classList.add("d-none");
+
 }
 
 function updateContact() {
+  isEditing = false
   let isNameValid = validation(nameInput);
   let isPhoneValid = validation(phoneInput);
   let isEmailValid = validation(emailInput);
