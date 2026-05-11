@@ -244,7 +244,7 @@ function getCartona(i) {
 
   return `<div class="col-12 col-md-6">
   <div class="card bg-white rounded-4 border border-2 border-color">
-                        <div class="inner p-3">
+                        <div class="inner p-3 pb-0">
                           <div class="d-flex align-items-center gap-3">
                             <div
                               class="pic position-relative text-white ${contactList[i].color} d-flex align-items-center justify-content-center fw-semibold fs-5 text-uppercase">
@@ -268,16 +268,16 @@ function getCartona(i) {
                             <i class="fa-solid fa-envelope text-purble bg-lpurble p-2 rounded-3 fs-10"></i>
                             <p class="text-secondary fs-14 m-0">${contactList[i].mail}</p>
                           </div>
-                          <div class="my-2 d-flex align-items-center gap-2">
+                          <div class="${contactList[i].address == "" ? "d-none" : ""} mt-2 d-flex align-items-center gap-2">
                             <i class="fa-solid fa-location-dot text-success bg-success-subtle p-2 rounded-3 fs-10"></i>
                             <p class="text-secondary fs-14 m-0">${contactList[i].address}</p>
                           </div>
                           <div class="mt-3 d-flex align-items-center gap-2">
                             <span
-                              class="${contactList[i].groupStyle} fs-10 text-primary bg-primary-subtle py-1 px-2 rounded-2 fw-semibold ">${contactList[i].group}</span>
+                              class="mb-3 ${contactList[i].group == "Select a group" ? "d-none" : ""}  ${contactList[i].groupStyle} fs-10 text-primary bg-primary-subtle py-1 px-2 rounded-2 fw-semibold ">${contactList[i].group}</span>
                             <span
                            
-                            <span class="${contactList[i].isEmergency ? "" : "d-none"} fs-10 text-danger bg-danger-subtle py-1 px-2 rounded-2 fw-semibold "><i
+                            <span class=" mb-3 ${contactList[i].isEmergency ? "" : "d-none"} fs-10 text-danger bg-danger-subtle py-1 px-2 rounded-2 fw-semibold "><i
                                 class="fa-solid fa-heart-pulse text-danger fs-10 me-1"></i>Emergency</span>
 
                           </div>
