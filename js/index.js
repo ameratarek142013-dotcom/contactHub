@@ -264,7 +264,7 @@ function getCartona(i) {
                                 ${contactList[i].phone}</p>
                             </div>
                           </div>
-                          <div class="mt-3 d-flex align-items-center gap-2">
+                          <div class="${contactList[i].mail == "" ? "d-none" : ""} mt-3 d-flex align-items-center gap-2">
                             <i class="fa-solid fa-envelope text-purble bg-lpurble p-2 rounded-3 fs-10"></i>
                             <p class="text-secondary fs-14 m-0">${contactList[i].mail}</p>
                           </div>
@@ -560,6 +560,12 @@ function validation(elemnt) {
     numInput: /^01[0125][0-9]{8}$/,
     mailInput: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
   };
+
+  if (elemnt.id == "mailInput" && text == "") {
+    elemnt.classList.remove("border-danger");
+    elemnt.nextElementSibling.classList.remove("d-none");
+    return true;
+  }
 
   if (regex[elemnt.id].test(text)) {
     elemnt.classList.remove("border-danger");
